@@ -1,8 +1,18 @@
-import { Args, Field, ObjectType, Query, Resolver } from "@nestjs/graphql";
-import { FormatLogContext, GetGraphqlReqLog, ILog, YeoTracerService } from "@yeo/tracer";
-import { HealthResponse } from "@yeo/entities";
+import { Args, Field, ObjectType, Query, Resolver } from '@nestjs/graphql';
+import {
+  FormatLogContext,
+  GetGraphqlReqLog,
+  ILog,
+  YeoTracerService,
+} from '@yeo/tracer';
 
-const context = FormatLogContext("Status Resolver");
+@ObjectType({ description: 'status response' })
+export class HealthResponse {
+  @Field()
+  public status: 'HEALTHY';
+}
+
+const context = FormatLogContext('Status Resolver');
 
 @Resolver()
 export class RootResolver {
@@ -10,7 +20,7 @@ export class RootResolver {
 
   @Query((returns) => HealthResponse)
   public getHealth(@GetGraphqlReqLog(context) log: ILog): HealthResponse {
-    this.tracer.info(log, "getHealth", status);
-    return { status: "HEALTHY" };
+    this.tracer.info(log, 'getHealth', status);
+    return { status: 'HEALTHY' };
   }
 }

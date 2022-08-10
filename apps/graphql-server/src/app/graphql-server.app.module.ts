@@ -20,12 +20,12 @@ import { RootResolver } from './resolvers/root.resolver';
         const config: ApolloDriverConfig = {
           debug: true,
           playground: true,
-          autoSchemaFile: true,
+          autoSchemaFile: './apps/graphql-server/schema.gql',
           sortSchema: true,
         };
         const origins = configService.get('CORS_ORIGINS')();
         config.cors = { origin: origins, credentials: true };
-        config.path = '/apis/graphql-server/graphql';
+        config.path = 'graphql';
         return config;
       },
       inject: [YeoConfigService],

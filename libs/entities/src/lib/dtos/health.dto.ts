@@ -1,7 +1,7 @@
-import { Field, ObjectType } from '@nestjs/graphql';
+import { Field, ObjectType } from "@nestjs/graphql";
 
-@ObjectType({ description: 'status response' })
+@ObjectType({ description: "status response" })
 export class HealthResponse {
   @Field()
-  public status!: 'HEALTHY';
+  public status: "HEALTHY";
 }
