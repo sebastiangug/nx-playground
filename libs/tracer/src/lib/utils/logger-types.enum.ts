@@ -1,0 +1,8 @@
+export enum LogType {
+  INFO = "INFO",
+  ERROR = "ERROR",
+  WARN = "WARN",
+  CATASTROPHIC = "CATASTROPHIC",
+  CLEANUP = "CLEANUP",
+  FINALISE = "FINALISE",
+}

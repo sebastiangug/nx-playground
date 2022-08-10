@@ -14,7 +14,11 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@yeo/entities": ["libs/entities/src/index.ts"],
+      "@yeo/nest-config": ["libs/nest-config/src/index.ts"],
+      "@yeo/tracer": ["libs/tracer/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
