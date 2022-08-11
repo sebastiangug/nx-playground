@@ -20,7 +20,7 @@ export class RootResolver {
 
   @Query((returns) => HealthResponse)
   public getHealth(@GetGraphqlReqLog(context) log: ILog): HealthResponse {
-    this.tracer.info(log, 'getHealth', status);
+    this.tracer.info(log, 'getHealth');
     return { status: 'HEALTHY' };
   }
 }
